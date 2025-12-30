@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Based on Time</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h2 {
+            color: grey;
+        }
+
+        #greeting {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Greeting Program</h2>
+    <p id="greeting"></p>
+
+    <script>
+        function greetUser() {
+            let now = new Date();
+            let hour = now.getHours();
+            let greetingText = "";
+
+            if (hour < 12) {
+                greetingText = "Good Morning!";
+            } else if (hour < 18) {
+                greetingText = "Good Afternoon!";
+            } else {
+                greetingText = "Good Evening!";
+            }
+
+            document.getElementById("greeting").innerText = greetingText;
+        }
+
+        // Run greeting when page loads
+        greetUser();
+    </script>
+</body>
+</html>

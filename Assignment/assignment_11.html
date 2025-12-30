@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign of Product</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .container {
+      border: 1px solid #000;
+      padding: 15px;
+      width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    input {
+      display: block;
+      margin: 8px 0;
+      padding: 5px;
+      width: 95%;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign of Product</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <input type="number" id="num3" placeholder="Enter third number">
+    <button onclick="checkSign()">Check Sign</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function checkSign() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let num3 = parseFloat(document.getElementById("num3").value);
+
+      let resultBox = document.getElementById("result");
+
+      if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+        resultBox.textContent = "Please enter all three numbers!";
+        return;
+      }
+
+      if (num1 === 0 || num2 === 0 || num3 === 0) {
+        resultBox.textContent = "The product is 0";
+      } else {
+        let product = num1 * num2 * num3;
+        if (product > 0) {
+          resultBox.textContent = "The sign is +";
+        } else {
+          resultBox.textContent = "The sign is -";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

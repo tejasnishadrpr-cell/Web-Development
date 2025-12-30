@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Right Angle Triangle</title>
+</head>
+<body>
+  <script>
+    // Take user input
+    let rows = prompt("Enter number of rows for the triangle:");
+    rows = parseInt(rows);
+
+    if (isNaN(rows) || rows <= 0) {
+      document.write("Please enter a valid positive number.");
+    } else {
+      // Nested for loop to build the triangle
+      for (let i = 1; i <= rows; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write("* ");
+        }
+        document.write("<br>");
+      }
+    }
+  </script>
+</body>
+</html>

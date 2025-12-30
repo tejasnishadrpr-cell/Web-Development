@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: blueviolet;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            margin-left: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Number Guessing Game</h2>
+    <p>Guess the secret number between 1 and 100</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Guess</button>
+
+    <p id="result"></p>
+
+    <script>
+        // Secret number (can be randomized)
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+        function checkGuess() {
+            let guess = parseInt(document.getElementById("guessInput").value);
+            let result = "";
+
+            if (guess > secretNumber) {
+                result = "Too high! Try a lower number.";
+            } else if (guess < secretNumber) {
+                result = "Too low! Try a higher number.";
+            } else {
+                result = "🎉 Correct! The secret number was " + secretNumber;
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buzz Number Checker</title>
+</head>
+<body>
+  <h2>Buzz Number Checker</h2>
+  <input type="number" id="num" placeholder="Enter a number">
+  <button onclick="checkBuzz()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function checkBuzz() {
+      let n = parseInt(document.getElementById("num").value);
+      let result = "";
+
+      if (isNaN(n)) {
+        result = " Please enter a valid number.";
+      } else if (n % 7 === 0 || n % 10 === 7) {
+        result = n + " is a Buzz Number ";
+      } else {
+        result = n + " is NOT a Buzz Number ";
+      }
+
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+</body>
+</html>

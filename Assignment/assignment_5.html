@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Price Calculator</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: darkblue;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            margin-left: 5px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ticket Price Calculator</h2>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button onclick="calculatePrice()">Check Price</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculatePrice() {
+            let age = parseInt(document.getElementById("ageInput").value);
+            let price;
+
+            if (age < 12) {
+                price = 5;
+            } else if (age < 18) {
+                price = 10;
+            } else if (age < 60) {
+                price = 20;
+            } else {
+                price = 15;
+            }
+
+            document.getElementById("result").innerText = 
+                "Age: " + age + " → Ticket Price: $" + price;
+        }
+    </script>
+</body>
+</html>

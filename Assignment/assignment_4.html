@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Number</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: brown;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check if Number is Positive, Negative, or Zero</h2>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            let num = parseInt(document.getElementById("numInput").value);
+
+            // Using nested ternary operator
+            let result = (num > 0) ? "Positive" : (num < 0) ? "Negative" : "Zero";
+
+            document.getElementById("result").innerText = num + " is " + result;
+        }
+    </script>
+</body>
+</html>

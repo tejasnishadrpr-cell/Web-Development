@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: darkolivegreen;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 14px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>BMI Calculator</h2>
+    <input type="number" id="weightInput" placeholder="Enter weight (kg)">
+    <input type="number" id="heightInput" placeholder="Enter height (m)" step="0.01">
+    <br>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weightInput").value);
+            let height = parseFloat(document.getElementById("heightInput").value);
+
+            if (weight > 0 && height > 0) {
+                let bmi = weight / (height * height);
+                let category = "";
+
+                if (bmi < 18.5) {
+                    category = "Underweight";
+                } else if (bmi < 24.9) {
+                    category = "Normal weight";
+                } else if (bmi < 29.9) {
+                    category = "Overweight";
+                } else {
+                    category = "Obese";
+                }
+
+                document.getElementById("result").innerText = 
+                    "Your BMI is " + bmi.toFixed(2) + " → " + category;
+            } else {
+                document.getElementById("result").innerText = 
+                    "Please enter valid weight and height.";
+            }
+        }
+    </script>
+</body>
+</html>
