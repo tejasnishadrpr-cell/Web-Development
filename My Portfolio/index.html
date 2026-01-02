@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,347 +6,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tejas Nishad | Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-/* ===== GLOBAL ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
-html{scroll-behavior:smooth;}
 body{
-    background:#0b1220;
-    color:#e5e7eb;
-    display:flex;
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f4f4;
+    color:#333;
 }
 
-/* Screen-reader only label */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* ===== SIDEBAR ===== */
-aside{
-    width:260px;
-    height:100vh;
-    position:fixed;
-    background:linear-gradient(180deg,#020617,#020617,#0f172a);
-    padding:40px 25px;
-}
-aside h2{
-    font-size:26px;
-    margin-bottom:40px;
-}
-aside h2 span{color:#38bdf8;}
-aside a{
-    display:block;
-    color:#cbd5f5;
-    text-decoration:none;
-    margin:18px 0;
-    font-size:17px;
-    transition:.3s;
-}
-aside a:hover{
-    color:#38bdf8;
-    transform:translateX(6px);
-}
-
-/* ===== MAIN CONTENT ===== */
-main{
-    margin-left:260px;
-    width:calc(100% - 260px);
-}
-
-/* ===== HERO ===== */
-.hero{
-    min-height:100vh;
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    align-items:center;
-    padding:80px;
-}
-.hero h1{
-    font-size:50px;
-    animation:slideRight 1.2s ease;
-}
-.hero h1 span{color:#38bdf8;}
-.hero p{
-    margin:18px 0 30px;
-    font-size:19px;
-    color:#cbd5f5;
-    animation:slideRight 1.5s ease;
-}
-.hero a{
-    padding:14px 34px;
-    background:#38bdf8;
-    color:#020617;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    animation:slideRight 1.8s ease;
-}
-
-/* ===== SECTIONS ===== */
-section{
-    padding:90px 80px;
-}
-
-/* ===== ABOUT ===== */
-.about{
-    display:grid;
-    grid-template-columns:350px auto;
-    gap:60px;
-    align-items:center;
-}
-.about img{
-    width:100%;
-    border-radius:25px;
-    border:4px solid #38bdf8;
-    animation:float 4s infinite;
-}
-.about h2{
-    font-size:32px;
-    margin-bottom:15px;
-}
-.about p{
-    line-height:1.8;
-    color:#cbd5f5;
-}
-
-/* ===== SKILLS ===== */
-.skills h2,
-.certificates h2{
-    font-size:34px;
-    margin-bottom:40px;
-}
-.skill-row{
-    display:flex;
-    gap:25px;
-    overflow-x:auto;
-    padding-bottom:10px;
-}
-.skill{
-    min-width:160px;
-    background:#020617;
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    transition:.4s;
-}
-.skill:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px rgba(56,189,248,.7);
-}
-.skill i{
-    font-size:38px;
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-/* ===== CERTIFICATES ===== */
-.timeline{
-    border-left:3px solid #38bdf8;
-    padding-left:40px;
-}
-.timeline-item{
-    margin-bottom:40px;
-    position:relative;
-}
-.timeline-item::before{
-    content:"";
-    width:18px;
-    height:18px;
-    background:#38bdf8;
-    border-radius:50%;
-    position:absolute;
-    left:-49px;
-    top:5px;
-}
-.timeline-item img{
-    width:220px;
-    border-radius:15px;
-    margin:12px 0;
-}
-
-/* ===== CONTACT ===== */
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-}
-.contact h2{
-    font-size:34px;
-    margin-bottom:20px;
-}
-.contact form{
-    background:#020617;
-    padding:35px;
-    border-radius:20px;
-}
-.contact input,
-.contact textarea{
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:none;
-    border-radius:10px;
-    background:#0f172a;
+/* Header */
+header{
+    background:#222;
     color:white;
-}
-.contact button{
-    width:100%;
-    padding:14px;
-    background:#38bdf8;
-    border:none;
-    font-weight:600;
-    border-radius:30px;
-    cursor:pointer;
-}
-
-/* ===== SOCIALS ===== */
-.socials{
-    margin-top:20px;
-}
-.socials a{
-    font-size:30px;
-    color:#38bdf8;
-    margin-right:20px;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    padding:25px;
+    padding:20px;
     text-align:center;
-    background:#020617;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes slideRight{
-    from{opacity:0; transform:translateX(-40px);}
-    to{opacity:1; transform:translateX(0);}
-}
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+/* Profile Image */
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin-top:10px;
+    border:3px solid white;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-    aside{display:none;}
-    main{margin-left:0; width:100%;}
-    .hero,.about,.contact{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-    section{padding:80px 40px;}
+/* Navigation */
+nav{
+    background:#444;
+    padding:10px;
+    text-align:center;
+}
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Sections */
+section{
+    padding:30px;
+    background:white;
+    margin:20px;
+    border-radius:8px;
+}
+
+/* Skills list */
+ul{
+    list-style-type:square;
+    margin-left:20px;
+}
+
+/* Certificate links */
+.cert a{
+    color:#0066cc;
+    text-decoration:none;
+}
+.cert a:hover{
+    text-decoration:underline;
+}
+
+/* Contact Form */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+button{
+    padding:10px 20px;
+    background:#222;
+    color:white;
+    border:none;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    background:#222;
+    color:white;
+    padding:15px;
 }
 </style>
 </head>
 
 <body>
 
-<aside>
-    <h2>Tejas<span>.</span></h2>
-    <a href="#hero">Home</a>
+<header>
+    <h1>Tejas Nishad</h1>
+    <p>B.Tech (CSE) Student</p>
+    <img src="profile photo.jpeg" alt="Tejas Nishad Photo" class="profile-img">
+</header>
+
+<nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#certificates">Certificates</a>
     <a href="#contact">Contact</a>
-</aside>
+</nav>
 
-<main>
-
-<div class="hero" id="hero">
-    <div>
-        <h1>Hello, I’m <span>Tejas Nishad</span></h1>
-        <p>B.Tech (CSE) Student | Web Developer</p>
-        <a href="#contact">Contact Me</a>
-    </div>
-</div>
-
-<section id="about" class="about">
-    <img src="profile photo.jpeg" alt="Tejas Nishad Profile Photo">
-    <div>
-        <h2>About Me</h2>
-        <p>
-            I am a motivated Computer Science Engineering student passionate about web development.
-            I love building elegant, user-friendly, and responsive web applications using modern technologies.
-        </p>
-        <p><strong>Email:</strong> tejasnishad.rpr@gmail.com</p>
-        <p><strong>Phone:</strong> 9302278282</p>
-    </div>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science Engineering student interested in web development.
+        I enjoy learning HTML, CSS, and C programming.
+    </p>
+    <p><strong>Email:</strong> tejasnishad.rpr@gmail.com</p>
+    <p><strong>Phone:</strong> 9302278282</p>
 </section>
 
-<section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skill-row">
-        <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
-        <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-        <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
-        <div class="skill"><i class="fas fa-code"></i><p>C</p></div>
-        <div class="skill"><i class="fab fa-github"></i><p>GitHub</p></div>
-    </div>
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (Basic)</li>
+        <li>C Programming</li>
+        <li>GitHub</li>
+    </ul>
 </section>
 
-<section id="certificates" class="certificates">
+<section id="certificates">
     <h2>Certificates</h2>
-    <p style="margin-bottom:20px;color:#cbd5f5;">Put your certificate image files in a <code>certs/</code> folder and update the <code>href</code> links below to the official IBM verification URLs (or replace the image names). Example file names: <code>certs/ibm-c-programming.png</code>, <code>certs/ibm-html-css-js.png</code>.</p>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>C Programming – IBM</h3>
-            <!-- <a href="certs/ibm-c-programming.pdf" target="_blank" rel="noopener noreferrer"> -->
-                <img src="PFC.png" alt="IBM C Programming Certificate" loading="lazy">
+    <ul class="cert">
+        <li>
+            <a href="https://courses.risu.skillsnetwork.site/certificates/2c99da5ec4394425b836e1b97a34268c" target="_blank">
+                C Programming – IBM
             </a>
-            <p><a href="certs/ibm-c-programming.pdf" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;">View certificate</a></p>
-        </div>
-        <div class="timeline-item">
-            <h3>HTML, CSS & JavaScript – IBM</h3>
-            <!-- <a href="certs/ibm-html-css-js.pdf" target="_blank" rel="noopener noreferrer"> -->
-                <img src="web.png" alt="IBM HTML CSS JavaScript Certificate" loading="lazy">
+        </li>
+        <li>
+            <a href="https://courses.risu.skillsnetwork.site/certificates/e0c26e38ba9f4eacb0f84025a79fb91f" target="_blank">
+                HTML, CSS & JavaScript – IBM
             </a>
-            <p><a href="certs/ibm-html-css-js.pdf" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;">View certificate</a></p>
-        </div>
-    </div>
+        </li>
+    </ul>
 </section>
 
-<section id="contact" class="contact">
-    <div>
-        <h2>Let’s Connect</h2>
-        <p>Email: tejasnishad.rpr@gmail.com</p>
-        <p>Phone: 9302278282</p>
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/tejas-nishad-772439383" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/tejasnishadrpr-cell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        </div>
-    </div>
-
-    <form onsubmit="sendMessage(event)">
-        <label for="contact-name" class="sr-only">Name</label>
-        <input id="contact-name" name="name" type="text" placeholder="Your Name" required aria-label="Your Name">
-
-        <label for="contact-email" class="sr-only">Email</label>
-        <input id="contact-email" name="email" type="email" placeholder="Your Email" required aria-label="Your Email">
-
-        <label for="contact-message" class="sr-only">Message</label>
-        <textarea id="contact-message" name="message" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
-
-        <button type="submit">Send Message</button>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
     </form>
 </section>
 
 <footer>
-    © 2025 Tejas Nishad | All Rights Reserved
+    © 2025 Tejas Nishad
 </footer>
-
-</main>
-
-<script>
-function sendMessage(e){
-    e.preventDefault();
-    alert("Thank you! Tejas will contact you soon 😊");
-}
-</script>
 
 </body>
 </html>
